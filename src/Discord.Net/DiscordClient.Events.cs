@@ -74,15 +74,19 @@ namespace Discord
         private void OnChannelUpdated(Channel before, Channel after)
             => OnEvent(ChannelUpdated, new ChannelUpdatedEventArgs(before, after));
 
+		#pragma warning disable 612, 618
         private void OnMessageAcknowledged(Message msg)
             => OnEvent(MessageAcknowledged, new MessageEventArgs(msg));
-        private void OnMessageDeleted(Message msg)
+		#pragma warning restore 612, 618
+		private void OnMessageDeleted(Message msg)
             => OnEvent(MessageDeleted, new MessageEventArgs(msg));
         private void OnMessageReceived(Message msg)
             => OnEvent(MessageReceived, new MessageEventArgs(msg));
+		#pragma warning disable 612, 618
         internal void OnMessageSent(Message msg)
             => OnEvent(MessageSent, new MessageEventArgs(msg));
-        private void OnMessageUpdated(Message before, Message after)
+		#pragma warning restore 612, 618
+		private void OnMessageUpdated(Message before, Message after)
             => OnEvent(MessageUpdated, new MessageUpdatedEventArgs(before, after));
 
         private void OnProfileUpdated(Profile before, Profile after)

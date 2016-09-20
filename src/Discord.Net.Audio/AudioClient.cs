@@ -147,7 +147,9 @@ namespace Discord.Audio
         }
         private async Task Cleanup()
         {
+			#pragma warning disable 612, 618
             var oldState = _gatewayState;
+			#pragma warning restore 612, 618
             _gatewayState = ConnectionState.Disconnecting;
 
             var server = VoiceSocket.Server;
